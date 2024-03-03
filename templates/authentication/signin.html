@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>SignIn</title>
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    
+
+    <form action="/signin" method="post">
+    {% csrf_token %}
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="card-body p-md-5 mx-md-4">
+      
+                      <div class="text-center">
+                        <img src="https://dev-insignia-consultancy.twic.pics/home/logo.png?twic=v1/cover=230x50"
+                          style="width: 185px;" alt="logo">
+                          <br>
+                          <hr>
+                        <h4 class="mt-1 mb-5 pb-1">We are The Parshing Team</h4>
+                      </div>
+      
+                      <form>
+                        <p>Please login to your account</p>
+      
+                        <div class="form-outline mb-4">
+                            <label for="" style="font-weight: bold;">Username</label>
+                            <input type="text" id="username" name="username" class="form-control" placeholder="Enter a username" required>
+                        </div>
+      
+                        <div class="form-outline mb-4">
+                            <label for="" style="font-weight: bold;">Password</label>
+                            <input type="password" id="password1" name="password1" class="form-control" placeholder="Enter Password" required>
+                        </div>
+      
+                        <div class="text-center pt-1 mb-5 pb-1">
+                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
+                            in</button>
+                        </div>
+      
+                        <div class="d-flex align-items-center justify-content-center pb-4">
+                            <p class="mb-0 me-2">Don't have an account?</p>
+                            <a href="signup" class="btn btn-outline-danger">Create new</a>
+                        </div>
+                        
+      
+                      </form>
+      
+                    </div>
+                  </div>
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2" style="background-color: #53E0BC">
+                    <div class="text-black px-3 py-4 p-md-5 mx-md-4">
+                      <h4 class="mb-4">We are more than just a company</h4>
+                      <p class="small mb-0">Insignia is dedicated to helping businesses stay ahead of the technology curve. We understand that technology is constantly evolving and it can be difficult for companies to keep up. That's why we offer a wide range of services to help businesses stay competitive in today's digital landscape.From strategy development to implementation, our team of experts has the skills and experience to help your company succeed. We specialize in providing customized solutions that are tailored to meet the unique needs of each individual business.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<!--
+        <label for="">username</label>
+        <input type="text" id="username" name="username" placeholder="Enter a username" required>
+        <br>
+
+        <label for="">Password</label>
+        <input type="password" id="password1" name="password1" placeholder="Enter Password" required>
+        <br>
+
+
+        <button type="submit">Sign In</button>
+-->
+    </form>
+</body>
+</html>
