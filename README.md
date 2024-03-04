@@ -15,6 +15,11 @@ conda activate venv/
 pip install -r requirements.txt
 ```
 
+### Run Migrations
+```
+python manage.py migrate
+```
+
 ### Run the Django application
 ```
 python manage.py runserver
